@@ -30,4 +30,4 @@ For the initial project design reference view the UML displayed below
  - However, code for PaymentType is properly implemented
  - An updated UML with any additional functionality beyond requirements will be added if needed
 
-![UML Diagram](UML_REFERENCE.png)
+![UML Diagram](UML.png)
