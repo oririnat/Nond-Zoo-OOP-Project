@@ -21,7 +21,7 @@ public class Caretaker extends Employee implements Runnable {
         
         setDefaultVariables();
         this.myAnimal = myList[choice];
-    }
+    } 
     
     /**
      * Class constructor for Caretaker()

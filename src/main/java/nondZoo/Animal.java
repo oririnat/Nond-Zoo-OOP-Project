@@ -3,7 +3,7 @@ package nondZoo;
 /**
  *
  */
-public abstract class Animal {
+public abstract class Animal implements Cloneable {
 
     /**
      * Every animal has a name. Class variable name is not private, but
@@ -28,6 +28,12 @@ public abstract class Animal {
         this.gender = AnimalGender.OTHER;
 
     }
+    
+    public Object clone() throws CloneNotSupportedException{  
+    	Animal newAnimal = (Animal)super.clone();
+    	newAnimal.gender = AnimalGender.OTHER;
+    	return newAnimal;
+    }  
 
     /**
      * speak() - general method for animal utterance

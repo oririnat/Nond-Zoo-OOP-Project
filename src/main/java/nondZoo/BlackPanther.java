@@ -28,9 +28,7 @@ public class BlackPanther extends Animal implements Runnable {
         this.Eye_Color = "Green";
         this.Nativity = "Asia";
         this.AvgSpeed = 56;
-        this.IsCarnivores = true;
-        
-              
+        this.IsCarnivores = true; 
     }
     
     /******************************

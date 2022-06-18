@@ -4,9 +4,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,11 +30,123 @@ import org.springframework.util.ResourceUtils;
 @Controller
 public class ZooIndexController {
 
-    private static final String GREETING_MESSAGE = "Welcome to NONd Zoo!";
+    private static final String GREETING_MESSAGE = "Welcome to NOND Zoo!";
     private static final String GOODBYE_MESSAGE = "Thank you for visiting Nond Zoo!";
     private static final int ANIMAL_TOTAL = 5;
+    
+    public static ArrayList<Animal> animals = getDefaultAnimals();
+    
+    
+    /**
+     * Gets the base animals who will always be in the zoo
+     * 
+     * @return      The ArrayList containing the animals
+     */
+    public static ArrayList<Animal> getDefaultAnimals() {
+    	ArrayList<Animal> baseAnimals = new ArrayList<Animal>();
+    	baseAnimals.add(new BlackPanther("Blacky"));
+    	baseAnimals.add(new ElephantBird("Birdy"));
+    	baseAnimals.add(new Griffin("Finn"));
+    	baseAnimals.add(new Glyptodon("Peter"));
+    	return baseAnimals;
+    }
 
+    /**
+     * Adds a new Animal to our animal list
+     * 
+     * @param className    The type of the animal we want to add
+     * @param animalName   The name of the new animal we are adding
+     */
+	public static void AddAnimal(String className, String animalName) {
+    	String myPackage = "nondZoo";
+        Class[] cArg = new Class[1];
+        cArg[0] = String.class;
 
+        String fullClass = myPackage + "." + className.replace(" ", "");
+        try {
+            Class<?> animalClass = Class.forName(fullClass);
+            Object obj = animalClass.getDeclaredConstructor(cArg).newInstance(animalName);
+            animals.add((Animal)obj);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+	
+	/**
+     * Delete an animal from out animal list since it is not in the zoo anymore
+     * 
+     * @param animalName   The name of the animal we want to delete
+     */
+	public static void DeleteAnimal(String animalName) {
+		for(int i=0; i< animals.size(); i++) {
+			if(animals.get(i).name == animalName) {
+				animals.remove(i);
+			}
+		}
+	}
+	
+	/**
+     * Prints our animals names
+     *
+     */
+	public static void PrintAllAnimals() {
+		for(int i=0; i< animals.size(); i++) {
+			System.out.println(animals.get(i).getName() + " - " + animals.get(i).getClass().getSimpleName());
+		}
+	}
+	
+	/**
+     * Sorts our animals by alphabetical order
+     * 
+     */
+	public static void SortAnimals() {
+		 animals.sort((a1, a2)
+                -> a1.getName().compareTo(
+                    a2.getName()));
+	}
+	
+	
+	/**
+     * Search the animals who match the search string by name
+     * 
+     * @param searchString	the input the user has searched
+     * @return 	list of animals who was the searched string in their name
+     */
+	public static ArrayList<Animal> SearchAnimalByName(String searchString) {
+		ArrayList<Animal> matchedAnimals = new ArrayList<Animal>();
+		String regex = "^.*" + searchString + ".*$";
+		for(int i=0; i< animals.size(); i++) {
+			if(animals.get(i).getName().matches(regex)) {
+				matchedAnimals.add(animals.get(i));
+			}
+		}
+		return matchedAnimals;
+	}
+	
+	
+	/**
+     * Clones an animal and created a new copy of it 
+     * 
+     * @param animalName	The name of the animal we want to clone
+     */
+	public static void CloneAnimal(String animalName) {
+		Animal clonedAnimal = null;
+		for(int i=0; i< animals.size(); i++) {
+			if(animals.get(i).name == animalName) {
+				try {
+					clonedAnimal = (Animal)animals.get(i).clone();
+					break;
+				} catch (CloneNotSupportedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		if(clonedAnimal != null) {			
+			animals.add(clonedAnimal);
+		}
+	}
+	
+    
     /**
      * Map GET request to "/" to index().
      *
@@ -43,16 +159,6 @@ public class ZooIndexController {
         model.addAttribute("id", idParam);
         model.addAttribute("greeting", GREETING_MESSAGE);
         return "index";
-    }
-
-    /**
-     * Map GET request to "/about" to about().
-     *
-     * @return filename from src/main/resources/templates folder
-     */
-    @GetMapping(path = "/about")
-    public String about() {
-        return "about";
     }
 
     /**
@@ -102,7 +208,7 @@ public class ZooIndexController {
      * @param animalName    The animal's name required in its constructor
      */
     private static void callAnimalRun(String className, String animalName) {
-        String myPackage = "edu.nwmissouri.zoo10group";
+        String myPackage = "nondZoo";
         Class[] cArg = new Class[1];
         cArg[0] = String.class;
         Class noparams[] = {};
@@ -162,6 +268,7 @@ public class ZooIndexController {
         for (int n = 0; n < animalCount; n++) {
             animalMap.put((n + 1), animals[n]);
         }
+        System.out.println(animalMap);
         return animalMap;
     }
     

@@ -10,6 +10,13 @@ This project is a demonstration of the skills we've learned in OOP. We are build
 ## View Our Testing Coverage here:
  - [Test Coverage Using Jacoco 0.8.7](https://dierale.github.io/ZooGroup10/Zoo10Group-Coverage.html)
 
+## Project Contributors:
+ - [Alex Dieringer](https://github.com/Dierale)
+ - [Manish Goud Bandharapu](https://github.com/919610362)
+ - [Hemanth Kumar Reddy Pidaparathy](https://github.com/Hemanthkumarreddy)
+ - [Hemanth Sai Reddy Velamuri](https://github.com/hemanthsaireddyvelamuri)
+ - [Jayanth Naramsetty](https://github.com/jayanthnaramsetty)
+
 ## Additional Details
 Noteable Project Functionalities:
  - ZooIndexController uses a callAnimalRun() function to dynamically call each Animal subclass's run(). This means we can add more animals at will to our getAnimalList() and it wont need to be updated. As long as the name in the list matches the animal's java file name we're safe
