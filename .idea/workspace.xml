@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d50e4706-d822-481d-83ab-21ca78a666de" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_UML.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/AnimalGender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/BlackPanther.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Brachiosaurus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Caretaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/ContestWinner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Curator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/ElephantBird.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Glyptodon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Griffin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Guest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/LifetimeMember.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/PaymentType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/Visitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/ZooApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nondZoo/ZooIndexController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_panther.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/brachiosaurus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/elephant_bird.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/glyptodon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/griffin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/zooAppStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/black_panther.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/brachiosaurus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/elephant_bird.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/glyptodon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/griffin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/employee.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/visitor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/black_panther.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/brachiosaurus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/elephant_bird.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/glyptodon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/griffin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/system.properties" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/pom.xml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2B1AgC9IAhPT1DpmmDXta0hL4kE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/BIG Documents/git repos/Nond-Zoo-OOP-Project/backend",
+    "spring.configuration.checksum": "8e015c0a71db3355704ffedf57e79fc9"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="ZooApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="NOND_ZOO" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="nondZoo.ZooApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d50e4706-d822-481d-83ab-21ca78a666de" name="Changes" comment="" />
+      <created>1656063334009</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656063334009</updated>
+      <workItem from="1656063342284" duration="680000" />
+      <workItem from="1657369099635" duration="138000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
