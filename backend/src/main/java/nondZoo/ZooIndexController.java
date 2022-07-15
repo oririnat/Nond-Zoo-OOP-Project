@@ -147,19 +147,19 @@ public class ZooIndexController {
 	}
 	
     
-//    /**
-//     * Map GET request to "/" to index().
-//     *
-//     * @return filename from src/main/resources/templates folder
-//     */
-//    @GetMapping(path = "/")
-//    public String index(
-//            @RequestParam(name = "id", required = false, defaultValue = "0") String idParam,
-//            Model model) {
-//        model.addAttribute("id", idParam);
-//        model.addAttribute("greeting", GREETING_MESSAGE);
-//        return "index";
-//    }
+    /**
+     * Map GET request to "/" to index().
+     *
+     * @return filename from src/main/resources/templates folder
+     */
+    @GetMapping(path = "/")
+    public String index(
+            @RequestParam(name = "id", required = false, defaultValue = "0") String idParam,
+            Model model) {
+        model.addAttribute("id", idParam);
+        model.addAttribute("greeting", GREETING_MESSAGE);
+        return "index";
+    }
 
     /**
      * Map GET request to "/employee" to employee().
