@@ -24,6 +24,8 @@ public class BlackPanther extends Animal implements Runnable {
     public BlackPanther(String name) {
         super(name);
         
+        this.animalType = "BlackPanther";
+        this.gender = AnimalGender.MALE;
         this.Group_Name = "Cat";
         this.Eye_Color = "Green";
         this.Nativity = "Asia";

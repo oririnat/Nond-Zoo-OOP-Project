@@ -18,6 +18,8 @@ public abstract class Animal implements Cloneable {
      */
     protected AnimalGender gender;
 
+	public String animalType;
+
     /**
      * Animal constructor
      *
@@ -26,12 +28,21 @@ public abstract class Animal implements Cloneable {
     public Animal(String name) {
         this.name = name;
         this.gender = AnimalGender.OTHER;
-
+        this.animalType = "Unknown";
     }
     
-    public Object clone() throws CloneNotSupportedException{  
+    public String getAnimalType() {
+		return animalType;
+	}
+
+	public void setAnimalType(String animalType) {
+		this.animalType = animalType;
+	}
+
+	public Object clone() throws CloneNotSupportedException{  
     	Animal newAnimal = (Animal)super.clone();
     	newAnimal.gender = AnimalGender.OTHER;
+    	newAnimal.animalType = "Unknown";
     	return newAnimal;
     }  
 

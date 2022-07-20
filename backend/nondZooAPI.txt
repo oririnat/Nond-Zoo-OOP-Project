@@ -1,0 +1,13 @@
+GET /animals
+GET /sortedAnimals?sort=sort
+GET /sortedAnimals?sort=reversed
+
+POST /animal  body: {animalType: "", name: ""}
+curl -X POST http://localhost:8080/animal -H 'accept: application/xml'   -H 'cache-control: no-cache'   -H 'content-type: application/json' -d '{ "animalType":"BlackPanther", "name":"checkinggg"}'
+
+DELETE /animal?name="luli"
+
+GET /animals/search?searchInput=i
+
+POST /animals/clone body: {name: ""}
+curl -X POST http://localhost:8080/animals/clone -H 'accept: application/xml'   -H 'cache-control: no-cache'   -H 'content-type: application/json' -d '{"name":"Blacky"}'
