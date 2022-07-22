@@ -4,7 +4,7 @@ import axios from "axios";
 import {
   sucessWithMessage,
   errorWithMessage,
-} from "../components/Shared/swalAlerts";
+} from "../Shared/swalAlerts";
 
 export default function SortAnimals({ setMyAnimals }) {
   const [orderReversed, setOrderReversed] = useState(undefined);

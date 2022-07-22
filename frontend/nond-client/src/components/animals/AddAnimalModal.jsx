@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from "@mui/material";
 import AnimalSelection from "./AnimalSelection";
-import { postNewAnimal } from "./Shared/ApiCalls";
+import { postNewAnimal } from "../Shared/ApiCalls";
 
 export default function AddAnimalModal({ triggerAnimalsRetrieval, children }) {
   const [open, setOpen] = useState(false);
@@ -23,8 +23,6 @@ export default function AddAnimalModal({ triggerAnimalsRetrieval, children }) {
     handleClose();
     postNewAnimal(animalName, type, triggerAnimalsRetrieval);
   };
-
-
 
   return (
     <>

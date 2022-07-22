@@ -4,19 +4,15 @@ import {
   CardActions,
   CardContent,
   Button,
-  Typography,
 } from "@mui/material";
+import AnimalContent from "./AnimalContent";
+
 
 export default function Animal({animal, handleAnimalDeletion, triggerAnimalsRetrieval}) {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {animal.animalType}
-        </Typography>
-        <Typography variant="h5" component="div">
-          {animal.name}
-        </Typography>
+        <AnimalContent animal={animal} />
       </CardContent>
       <CardActions>
         <Button size="small" onClick={() => handleAnimalDeletion(animal.name, triggerAnimalsRetrieval)}>Delete</Button>
