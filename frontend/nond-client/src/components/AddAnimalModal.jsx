@@ -8,10 +8,10 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
-import axios from "axios";
 import AnimalSelection from "./AnimalSelection";
+import { postNewAnimal } from "./Shared/ApiCalls";
 
-export default function AddAnimalModal({ children }) {
+export default function AddAnimalModal({ triggerAnimalsRetrieval, children }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -21,14 +21,10 @@ export default function AddAnimalModal({ children }) {
 
   const handleSubmit = () => {
     handleClose();
-    postNewAnimal();
+    postNewAnimal(animalName, type, triggerAnimalsRetrieval);
   };
 
-  const postNewAnimal = () => {
-    axios.post(`/animal`, { name: animalName, type: type }).then((res) => {
-      // CHECK FOR ERRORS
-    });
-  };
+
 
   return (
     <>

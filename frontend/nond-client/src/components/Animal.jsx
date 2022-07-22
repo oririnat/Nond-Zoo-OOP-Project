@@ -7,19 +7,19 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function Animal({animal}) {
+export default function Animal({animal, handleAnimalDeletion, triggerAnimalsRetrieval}) {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {animal.type}
+          {animal.animalType}
         </Typography>
         <Typography variant="h5" component="div">
           {animal.name}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Delete</Button>
+        <Button size="small" onClick={() => handleAnimalDeletion(animal.name, triggerAnimalsRetrieval)}>Delete</Button>
       </CardActions>
     </Card>
   );
