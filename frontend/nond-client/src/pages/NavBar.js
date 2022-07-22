@@ -2,6 +2,10 @@ import * as React from 'react'
 import { AppBar, Box, Toolbar, Button } from '@mui/material'
 
 export default function NavBar({ LoggedUser, setAuth }) {
+
+  const logout = () => { 
+    setAuth(false);
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -11,7 +15,7 @@ export default function NavBar({ LoggedUser, setAuth }) {
             size="large"
             style={{ display: 'block', marginLeft: '10px' }}
             variant="contained"
-            onClick={() => setAuth(false)}
+            onClick={logout}
           >
             Log out
           </Button>
