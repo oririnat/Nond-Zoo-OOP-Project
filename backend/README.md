@@ -1,21 +1,12 @@
 ## ZooApp Project Description
 This project is a demonstration of the skills we've learned in OOP. We are building a zoo full of animals to visit and designating types of visitors and employees that work there.  Visitors should be able to specify what membership level they possses, see a resulting fee once they visit, and be able to view the details of the animals at the zoo in a concise manner.  Employees will be able to see their job description, how much they are paid, how often they work, and the animals or exhibits they are in charge of.
 
-## Visit Our Application on Heroku
-- [Heroku WebApp](https://group10zoo.herokuapp.com/)
-
-## View Our Project API
- - [Click Here - Hosted on GitHub Pages](https://dierale.github.io/ZooGroup10/)
-
-## View Our Testing Coverage here:
- - [Test Coverage Using Jacoco 0.8.7](https://dierale.github.io/ZooGroup10/Zoo10Group-Coverage.html)
 
 ## Project Contributors:
- - [Alex Dieringer](https://github.com/Dierale)
- - [Manish Goud Bandharapu](https://github.com/919610362)
- - [Hemanth Kumar Reddy Pidaparathy](https://github.com/Hemanthkumarreddy)
- - [Hemanth Sai Reddy Velamuri](https://github.com/hemanthsaireddyvelamuri)
- - [Jayanth Naramsetty](https://github.com/jayanthnaramsetty)
+ - Dana Ben Gigi
+ - Ori Rinat
+ - Nikole Waintraub
+ - Noam Or Yizraeli
 
 ## Additional Details
 Noteable Project Functionalities:

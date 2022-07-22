@@ -26,6 +26,7 @@ public class Griffin extends Animal implements Runnable {
     public Griffin(String name) {
         super(name);
 
+        this.animalType = "Griffin";
         this.species_name = "Griffin";
         this.species_latin = "grȳpus";
         this.locationFound = "Fantasy";

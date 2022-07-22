@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -16,8 +17,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.util.ResourceUtils;
 
 /**
@@ -27,7 +35,8 @@ import org.springframework.util.ResourceUtils;
  * https://spring.io/guides/gs/serving-web-content/
  *
  */
-@Controller
+@RestController
+@CrossOrigin(origins="http://localhost:3000")
 public class ZooIndexController {
 
     private static final String GREETING_MESSAGE = "Welcome to NOND Zoo!";
@@ -57,7 +66,7 @@ public class ZooIndexController {
      * @param className    The type of the animal we want to add
      * @param animalName   The name of the new animal we are adding
      */
-	public static void AddAnimal(String className, String animalName) {
+	public static Animal AddAnimal(String className, String animalName) {
     	String myPackage = "nondZoo";
         Class[] cArg = new Class[1];
         cArg[0] = String.class;
@@ -67,9 +76,11 @@ public class ZooIndexController {
             Class<?> animalClass = Class.forName(fullClass);
             Object obj = animalClass.getDeclaredConstructor(cArg).newInstance(animalName);
             animals.add((Animal)obj);
+            return (Animal)obj;
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return null;
     }
 	
 	/**
@@ -79,7 +90,7 @@ public class ZooIndexController {
      */
 	public static void DeleteAnimal(String animalName) {
 		for(int i=0; i< animals.size(); i++) {
-			if(animals.get(i).name == animalName) {
+			if(animals.get(i).name.equals(animalName)) {
 				animals.remove(i);
 			}
 		}
@@ -99,10 +110,15 @@ public class ZooIndexController {
      * Sorts our animals by alphabetical order
      * 
      */
-	public static void SortAnimals() {
-		 animals.sort((a1, a2)
-                -> a1.getName().compareTo(
-                    a2.getName()));
+	public static ArrayList<Animal> SortAnimals(String sortType) {
+		 ArrayList<Animal> sorted = new ArrayList<Animal>(animals);
+		 sorted.sort((a1, a2)
+					 -> a1.getName().compareTo(
+							 a2.getName()));			 
+		 if(sortType.equals("reversed")) {
+			 Collections.reverse(sorted);
+		 }
+		 return sorted;
 	}
 	
 	
@@ -132,7 +148,7 @@ public class ZooIndexController {
 	public static void CloneAnimal(String animalName) {
 		Animal clonedAnimal = null;
 		for(int i=0; i< animals.size(); i++) {
-			if(animals.get(i).name == animalName) {
+			if(animals.get(i).name.equals(animalName)) {
 				try {
 					clonedAnimal = (Animal)animals.get(i).clone();
 					break;
@@ -146,7 +162,41 @@ public class ZooIndexController {
 		}
 	}
 	
-    
+	@GetMapping(path = "/animals")
+    public ArrayList<Animal> getAllAnimals() {
+		return animals;
+    }
+	
+	@GetMapping("/sortedAnimals")
+    public ArrayList<Animal> getSortedAnimals(
+    	@RequestParam(name = "sort", defaultValue = "sort") String sortType) {
+		return SortAnimals(sortType);
+    }
+	
+	@PostMapping("/animal")
+	public Animal AddAnimal(
+		@RequestBody AnimalAddRequestModel animalModel) {
+		return AddAnimal(animalModel.getAnimalType(), animalModel.getName());
+	}
+	
+	@DeleteMapping("/animal")
+	public void DeleteAnimalByName(
+		@RequestParam(name = "name", required = true) String animalName) {
+		DeleteAnimal(animalName);
+	}
+	
+	@GetMapping("animals/search")
+	public ArrayList<Animal> getAnimalsBySearchInput(
+		@RequestParam(name = "searchInput", defaultValue = "") String searchInput) {
+		return SearchAnimalByName(searchInput);
+	}
+	
+	@PostMapping("animals/clone")
+	public void cloneAnimal(
+		@RequestBody AnimalCloneRequestModel animalModel) {
+		CloneAnimal(animalModel.getName());
+	}
+	
     /**
      * Map GET request to "/" to index().
      *

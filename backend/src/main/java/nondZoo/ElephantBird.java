@@ -25,6 +25,8 @@ public class ElephantBird extends Animal implements Runnable {
     public ElephantBird(String name) {
         super(name);
         
+        this.animalType = "ElephantBird";
+        this.gender = AnimalGender.FEMALE;
         this.animalName = "Elephant Bird";
         this.family = "Aepyornithidae";
         this.lifeSpan = 60;

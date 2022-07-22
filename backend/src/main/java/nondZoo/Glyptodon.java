@@ -21,6 +21,7 @@ public class Glyptodon extends Animal implements Runnable {
     public Glyptodon(String name) {
         super(name);
         
+        this.animalType = "Glyptodon";
         this.name = "Glyptodon";
         this.genus = "armadillos";
         this.foundin = "Forest";
