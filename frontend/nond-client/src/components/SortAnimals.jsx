@@ -16,6 +16,6 @@ export default function SortAnimals({setMyAnimals}){
     };
 
     return (
-        <Button onclick={getSortedList}>Sort</Button>
+        <Button onClick={getSortedList}>Sort</Button>
     )
 }
