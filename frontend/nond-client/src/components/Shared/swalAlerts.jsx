@@ -6,7 +6,7 @@ const sucessWithMessage = (message) => {
     icon: "success",
     title: message,
     showConfirmButton: false,
-    timer: 1000,
+    timer: 1500,
   });
 };
 
@@ -16,7 +16,7 @@ const errorWithMessage = (message) => {
     icon: "error",
     title: message,
     showConfirmButton: false,
-    timer: 1700,
+    timer: 1500,
   });
 };
 

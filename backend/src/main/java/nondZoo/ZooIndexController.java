@@ -167,10 +167,14 @@ public class ZooIndexController {
 		return animals;
     }
 	
-	@GetMapping("/sortedAnimals")
-    public ArrayList<Animal> getSortedAnimals(
-    	@RequestParam(name = "sort", defaultValue = "sort") String sortType) {
-		return SortAnimals(sortType);
+	@GetMapping("/animals/sorted")
+    public ArrayList<Animal> getSortedAnimals() {
+		return SortAnimals("regular");
+    }
+
+    @GetMapping("/animals/reverse-sorted")
+    public ArrayList<Animal> getSortedAnimalsReversed() {
+        return SortAnimals("reversed");
     }
 	
 	@PostMapping("/animal")
