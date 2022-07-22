@@ -12,9 +12,12 @@ const LoginForm = ({ setLoggedUser, setAuth }) => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
+
+
   const LoginSchema = Yup.object().shape({
     username: Yup.string()
       .matches("[a-zA-Z]", "Provide a valid username")
+      .matches("Guest|lifeTimeMember|ContestWinner|Caretaker", "Provide a valid username from the following options Guest - lifeTimeMember - ContestWinner - Caretaker")
       .required("username is required"),
   });
 
