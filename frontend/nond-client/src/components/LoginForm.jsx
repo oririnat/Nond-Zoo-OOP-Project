@@ -14,7 +14,7 @@ const LoginForm = ({ setLoggedUser, setAuth }) => {
 
   const LoginSchema = Yup.object().shape({
     username: Yup.string()
-      .matches("[a-zA-Z_$][a-zA-Z0-9]", "Provide a valid username")
+      .matches("[a-zA-Z]", "Provide a valid username")
       .required("username is required"),
   });
 
