@@ -22,7 +22,7 @@ public class ZooIndexController {
      * @return      The ArrayList containing the animals
      */
     public static ArrayList<Animal> getDefaultAnimals() {
-    	ArrayList<Animal> baseAnimals = new ArrayList<Animal>();
+    	ArrayList<Animal> baseAnimals = new ArrayList<>();
     	baseAnimals.add(new BlackPanther("Blacky"));
     	baseAnimals.add(new ElephantBird("Birdy"));
     	baseAnimals.add(new Griffin("Finn"));
